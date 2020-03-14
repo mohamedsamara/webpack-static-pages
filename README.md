@@ -15,17 +15,24 @@ $ npm install
 
 ```
 
-## Run the application for development
+## Start
 
 ```
 $ npm start
 
 ```
 
-## Run the application for production
+## Simple build for production
 
 ```
 $ npm run build
+
+```
+
+## Run the application for production
+
+```
+$ npm run serve
 
 ```
 
@@ -34,3 +41,5 @@ $ npm run build
 - [Webpack](https://webpack.js.org/)
 
 - [jQuery](https://jquery.com/)
+
+- [Less](http://lesscss.org/)
