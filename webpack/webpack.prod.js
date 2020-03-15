@@ -1,21 +1,21 @@
 /* eslint-disable */
-"use strict";
+'use strict';
 
-const path = require("path");
-const webpackMerge = require("webpack-merge");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
+const path = require('path');
+const webpackMerge = require('webpack-merge');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
-const common = require("./webpack.common");
+const common = require('./webpack.common');
 
 const config = {
-  mode: "production",
+  mode: 'production',
   output: {
-    filename: "js/[name].[contenthash].js",
-    path: path.resolve(__dirname, "../", "build")
+    filename: 'js/[name].[contenthash].js',
+    path: path.resolve(__dirname, '../', 'build'),
   },
-  devtool: "source-map",
+  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -24,116 +24,116 @@ const config = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: "../"
-            }
+              publicPath: '../',
+            },
           },
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
-              sourceMap: true
-            }
+              sourceMap: true,
+            },
           },
           {
-            loader: "resolve-url-loader"
+            loader: 'resolve-url-loader',
           },
           {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
-              sourceMap: true
-            }
+              sourceMap: true,
+            },
           },
           {
-            loader: "sass-loader",
+            loader: 'sass-loader',
             options: {
-              sourceMap: true
-            }
-          }
-        ]
+              sourceMap: true,
+            },
+          },
+        ],
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg|ico)$/,
         use: [
           {
-            loader: "file-loader",
+            loader: 'file-loader',
             options: {
-              outputPath: "images",
-              name: "[name].[hash].[ext]"
-            }
+              outputPath: 'images',
+              name: '[name].[hash].[ext]',
+            },
           },
           {
-            loader: "image-webpack-loader",
+            loader: 'image-webpack-loader',
             options: {
               mozjpeg: {
                 progressive: true,
-                quality: 65
+                quality: 65,
               },
               svgo: {
                 plugins: [
                   {
-                    removeViewBox: false
+                    removeViewBox: false,
                   },
                   {
-                    removeEmptyAttrs: false
-                  }
-                ]
+                    removeEmptyAttrs: false,
+                  },
+                ],
               },
               gifsicle: {
-                interlaced: false
+                interlaced: false,
               },
               optipng: {
-                optimizationLevel: 7
+                optimizationLevel: 7,
               },
               pngquant: {
-                quality: "65-90",
-                speed: 4
+                quality: '65-90',
+                speed: 4,
               },
               webp: {
-                quality: 75
-              }
-            }
-          }
-        ]
+                quality: 75,
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [
           {
-            loader: "file-loader",
+            loader: 'file-loader',
             options: {
-              outputPath: "fonts",
-              publicPath: "../fonts",
-              name: "[name].[hash].[ext]"
-            }
-          }
-        ]
-      }
-    ]
+              outputPath: 'fonts',
+              publicPath: '../fonts',
+              name: '[name].[hash].[ext]',
+            },
+          },
+        ],
+      },
+    ],
   },
   performance: {
     hints: false,
     maxEntrypointSize: 512000,
-    maxAssetSize: 512000
+    maxAssetSize: 512000,
   },
   optimization: {
     minimize: true,
-    runtimeChunk: "single",
+    runtimeChunk: 'single',
     splitChunks: {
       cacheGroups: {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
-          chunks: "initial",
-          name: "vendor"
-        }
-      }
+          chunks: 'initial',
+          name: 'vendor',
+        },
+      },
     },
-    minimizer: [new TerserPlugin()]
+    minimizer: [new TerserPlugin()],
   },
   plugins: [
     new OptimizeCSSAssetsPlugin({}),
     new MiniCssExtractPlugin({
-      filename: "css/[name].[contenthash].css"
-    })
-  ]
+      filename: 'css/[name].[contenthash].css',
+    }),
+  ],
 };
 
 module.exports = webpackMerge(common, config);

@@ -1,14 +1,17 @@
-const glob = require("glob");
+/* eslint-disable */
+'use strict';
+
+const glob = require('glob');
 
 function getPageNames() {
   const newPages = [];
-  const pages = glob.sync("./src/pages/*");
+  const pages = glob.sync('./src/pages/*');
   pages.forEach(page => {
     newPages.push(
       page
-        .split("/")
+        .split('/')
         .pop()
-        .toLowerCase()
+        .toLowerCase(),
     );
   });
   return newPages;

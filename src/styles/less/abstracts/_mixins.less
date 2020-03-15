@@ -146,7 +146,6 @@
 
 // Keyframes & Animations
 .keyframes(@name,@frames) {
-
   @-webkit-keyframes @name {
     @frames();
   }
@@ -241,7 +240,7 @@
   backface-visibility: @visibility;
 }
 
-.background-size(@size){
+.background-size(@size) {
   -webkit-background-size: @size;
   -moz-background-size: @size;
   -o-background-size: @size;
@@ -438,6 +437,6 @@
 // breakpoints
 .responsive(@maxWidth; @rules) {
   @media only screen and (max-width: @maxWidth) {
-      @rules();
+    @rules();
   }
 }
