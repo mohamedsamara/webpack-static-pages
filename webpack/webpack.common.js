@@ -50,10 +50,26 @@ helpers.getPageNames().forEach(page => {
       template: `./src/pages/${page}/index.html`,
       chunks: [page],
       inject: true,
-      favicon: path.resolve(__dirname, '../', 'src/public/favicon.ico'),
-      minify: process.env.NODE_ENV === 'production',
+      // favicon: path.resolve(__dirname, '../', 'src/public/favicon.ico'),
+      minify:
+        process.env.NODE_ENV === 'production'
+          ? {
+              removeComments: true,
+              collapseWhitespace: true,
+              removeRedundantAttributes: true,
+              useShortDoctype: true,
+              removeEmptyAttributes: true,
+              removeStyleLinkTypeAttributes: true,
+              keepClosingSlash: true,
+              minifyJS: true,
+              minifyCSS: true,
+              minifyURLs: true,
+            }
+          : false,
     }),
   );
 });
+
+config.plugins.push();
 
 module.exports = config;

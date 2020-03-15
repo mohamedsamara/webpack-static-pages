@@ -17,7 +17,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.(scss|sass|css)$/,
+        test: /\.less$/,
         use: [
           'style-loader',
           {
@@ -33,8 +33,9 @@ const config = {
             },
           },
           {
-            loader: 'sass-loader',
+            loader: 'less-loader',
             options: {
+              javascriptEnabled: true,
               sourceMap: true,
             },
           },
@@ -64,6 +65,14 @@ const config = {
           },
         ],
       },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: 'html-loader',
+          },
+        ],
+      },
     ],
   },
   plugins: [
@@ -80,7 +89,6 @@ const config = {
     inline: true,
     compress: true,
     hot: true,
-    writeToDisk: true,
   },
 };
 
