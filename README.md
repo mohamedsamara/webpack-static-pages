@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a simple example of using webpack for static pages
+This is a basic webpack static pages starter
 
 ## Install
 
