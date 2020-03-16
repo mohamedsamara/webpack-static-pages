@@ -5,6 +5,7 @@ const path = require('path');
 const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const helpers = require('./helpers');
 
@@ -48,7 +49,7 @@ helpers.getPageNames().forEach(page => {
     new HtmlWebPackPlugin({
       filename: `${page}.html`,
       template: `./src/pages/${page}/index.html`,
-      chunks: [page],
+      chunks: [page, 'main'],
       inject: true,
       // favicon: path.resolve(__dirname, '../', 'src/public/favicon.ico'),
       minify:
@@ -70,6 +71,28 @@ helpers.getPageNames().forEach(page => {
   );
 });
 
-config.plugins.push();
+config.plugins.push(
+  new FaviconsWebpackPlugin({
+    logo: './src/public/favicon.svg',
+    mode: 'webapp',
+    devMode: 'webapp',
+    favicons: {
+      appName: 'webpack-static-pages',
+      appDescription: 'Basic webpack static pages starter',
+      developerName: '',
+      developerURL: null,
+      background: '#fff',
+      theme_color: '#4a68aa',
+      icons: {
+        coast: false,
+        yandex: false,
+      },
+    },
+    icons: {
+      twitter: true,
+      windows: true,
+    },
+  }),
+);
 
 module.exports = config;

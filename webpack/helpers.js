@@ -18,7 +18,9 @@ function getPageNames() {
 }
 
 function getEntry() {
-  const entry = {};
+  const entry = {
+    main: './src/js/index.js',
+  };
   const pages = getPageNames();
   pages.forEach(page => {
     entry[page] = `./src/pages/${page}/index.js`;

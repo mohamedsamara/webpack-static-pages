@@ -17,7 +17,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.less$/,
+        test: /\.(less|css)$/,
         use: [
           'style-loader',
           {

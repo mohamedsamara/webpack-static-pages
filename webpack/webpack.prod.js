@@ -6,7 +6,6 @@ const webpackMerge = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const common = require('./webpack.common');
 
@@ -20,7 +19,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.less$/,
+        test: /\.(less|css)$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -128,27 +127,6 @@ const config = {
     new OptimizeCSSAssetsPlugin({}),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash].css',
-    }),
-    new FaviconsWebpackPlugin({
-      logo: './src/public/favicon.svg',
-      mode: 'webapp',
-      devMode: 'webapp',
-      favicons: {
-        appName: 'webpack-static-pages',
-        appDescription: 'Basic webpack static pages starter',
-        developerName: '',
-        developerURL: null,
-        background: '#fff',
-        theme_color: '#4a68aa',
-        icons: {
-          coast: false,
-          yandex: false,
-        },
-      },
-      icons: {
-        twitter: true,
-        windows: true,
-      },
     }),
   ],
 };
