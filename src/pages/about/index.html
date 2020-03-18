@@ -4,15 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="Basic webpack static pages starter" />
+    <meta name="keywords" content="Webpack,jQuery,jQuery UI,Less,Boostrap" />
+    <meta name="robots" content="index,follow" />
     <title>About</title>
   </head>
   <body class="about">
+    <%= require('html-loader!../../partials/header.html') %>
     <main class="main">
       <section class="container-fluid">
-        <h2 class="page-title">
-          Contact Us Page
-          <a href="/contact.html">contact</a>
-        </h2>
+        <h2 class="page-title">About Us Page</h2>
       </section>
     </main>
   </body>

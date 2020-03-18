@@ -2,10 +2,11 @@
 import './vendor/bootstrap';
 import './vendor/jquery.ui';
 
+import { navigation } from './navigation';
+
 // Import application sass styles
 import '../styles/less/style.less';
 
 $(document).ready(function() {
-  // eslint-disable-next-line no-console
-  console.log('Hello');
+  navigation();
 });

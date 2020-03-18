@@ -19,7 +19,11 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.(less|css)$/,
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+      },
+      {
+        test: /\.less$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -90,15 +94,6 @@ const config = {
               publicPath: '../fonts',
               name: '[name].[hash].[ext]',
             },
-          },
-        ],
-      },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: 'html-loader',
-            options: { minimize: true },
           },
         ],
       },

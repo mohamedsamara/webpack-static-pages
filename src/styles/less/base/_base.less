@@ -1,29 +1,51 @@
+::selection {
+  background-color: @indigo;
+  color: @white;
+}
+
 html,
 body {
   min-height: 100vh;
+  overflow: auto;
+}
+
+html {
+  font-size: 14px;
+
+  @media screen and (min-width: 576px) {
+    font-size: 15px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
+
+  @media screen and (min-width: 992px) {
+    font-size: 17px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 18px;
+  }
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: @theme-white;
+  background-image: @main-bg;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-direction: column;
+  .flex();
 }
 
 a {
-  color: @blue;
-  text-decoration: none;
-  text-transform: capitalize;
-  font-size: @font-size-medium;
+  color: @theme-light-blue;
+  .transition(color @transition-speed);
+}
 
-  &:hover {
-    color: @gray;
-    text-decoration: underline;
-  }
-
-  &:focus {
-    color: @gray;
-    text-decoration: underline;
-  }
-
-  &:active {
-    color: @black;
-  }
-
-  &:visited {
-    color: @purple;
-  }
+a:hover {
+  color: @theme-primary;
 }

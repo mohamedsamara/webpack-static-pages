@@ -4,16 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="Basic webpack static pages starter" />
+    <meta name="keywords" content="Webpack,jQuery,jQuery UI,Less,Boostrap" />
+    <meta name="robots" content="index,follow" />
     <title>About</title>
   </head>
   <body class="about">
+    <%= require('html-loader!../../partials/header.html') %>
     <main class="main">
       <section class="container-fluid">
-        <h2 class="page-title">
-          Home Page
-        </h2>
-        <a href="/about.html">about</a>
-        <p>Date: <input type="text" id="datepicker" /></p>
+        <h2 class="page-title">Webpack Static Pages Starter</h2>
+        <ul id="sortable">
+          <li class="ui-state-default">
+            <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Webpack
+          </li>
+          <li class="ui-state-default">
+            <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>jQuery
+          </li>
+          <li class="ui-state-default">
+            <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>jQuery UI
+          </li>
+          <li class="ui-state-default">
+            <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Less
+          </li>
+          <li class="ui-state-default">
+            <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Bootstrap
+          </li>
+          <li class="ui-state-default">
+            <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>PostCSS
+          </li>
+          <li class="ui-state-default">
+            <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>ESLint
+          </li>
+        </ul>
       </section>
     </main>
   </body>

@@ -1,5 +1,6 @@
-import 'jquery-ui/ui/widgets/datepicker';
+import 'jquery-ui/ui/widgets/sortable';
+import '../../js/vendor/jquery.ui.touch-punch.min';
 
-$(document).ready(function() {
-  $('#datepicker').datepicker();
+$(function() {
+  $('#sortable').sortable();
 });

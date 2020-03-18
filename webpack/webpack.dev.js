@@ -17,7 +17,11 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.(less|css)$/,
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
+      },
+      {
+        test: /\.less$/,
         use: [
           'style-loader',
           {
@@ -65,14 +69,6 @@ const config = {
           },
         ],
       },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: 'html-loader',
-          },
-        ],
-      },
     ],
   },
   plugins: [
@@ -89,6 +85,7 @@ const config = {
     inline: true,
     compress: true,
     hot: true,
+    writeToDisk: true,
   },
 };
 
