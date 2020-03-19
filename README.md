@@ -2,7 +2,12 @@
 
 ## Description
 
-This is a basic webpack static pages starter
+This is a basic webpack static pages starter with jQuery UI, Bootstrap and Less.
+
+## Demo
+
+This application is deployed on Heroku. Please check it out :smile: [here](https://webpack-static-pages.firebaseapp.com/).
+
 
 ## Install
 
@@ -14,6 +19,18 @@ $ cd project
 $ npm install
 
 ```
+
+## Firebase Hosting
+
+```
+
+$ npm run deploy
+
+> Make sure Firebase CLI is installed, and project is initialized
+> firebase.json and .firebaserc will be generated
+
+```
+
 
 ## Start
 
