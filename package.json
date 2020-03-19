@@ -2,7 +2,7 @@
   "name": "webpack-static-pages",
   "version": "1.0.0",
   "description": "Webpack Static Pages",
-  "main": "",
+  "main": "index.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --mode=production --progress --config webpack/webpack.prod.js",
     "serve": "serve build",
@@ -16,6 +16,13 @@
     "type": "git",
     "url": "git+https://github.com/mohamedsamara/webpack-static-pages.git"
   },
+  "keywords": [
+    "webpack",
+    "jquery",
+    "jquery-ui",
+    "bootstrap",
+    "less"
+  ],
   "author": "Mohamed Samara (https://github.com/mohamedsamara)",
   "license": "ISC",
   "bugs": {
@@ -47,6 +54,7 @@
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "^0.9.0",
+    "offline-plugin": "^5.0.7",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
     "prettier": "^1.19.1",

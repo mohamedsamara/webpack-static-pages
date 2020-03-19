@@ -6,6 +6,7 @@ const webpackMerge = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const OfflinePlugin = require('offline-plugin');
 
 const common = require('./webpack.common');
 
@@ -25,7 +26,9 @@ const config = {
       {
         test: /\.less$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
           {
             loader: 'css-loader',
           },
@@ -47,6 +50,7 @@ const config = {
             loader: 'file-loader',
             options: {
               outputPath: 'images',
+              publicPath: '../images',
               name: '[name].[hash].[ext]',
             },
           },
@@ -74,7 +78,7 @@ const config = {
                 optimizationLevel: 7,
               },
               pngquant: {
-                quality: '65-90',
+                quality: [0.65, 0.9],
                 speed: 4,
               },
               webp: {
@@ -116,13 +120,32 @@ const config = {
         },
       },
     },
-    minimizer: [new TerserPlugin()],
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          warnings: false,
+          compress: {
+            comparisons: false,
+          },
+          parse: {},
+          mangle: true,
+          output: {
+            comments: false,
+            ascii_only: true,
+          },
+        },
+        cache: true,
+        parallel: true,
+        sourceMap: true,
+      }),
+    ],
   },
   plugins: [
     new OptimizeCSSAssetsPlugin({}),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash].css',
     }),
+    new OfflinePlugin(),
   ],
 };
 

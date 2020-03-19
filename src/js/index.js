@@ -1,3 +1,5 @@
+import * as OfflinePluginRuntime from 'offline-plugin/runtime';
+
 // Import vendors
 import './vendor/bootstrap';
 import './vendor/jquery.ui';
@@ -10,3 +12,5 @@ import '../styles/less/style.less';
 $(document).ready(function() {
   navigation();
 });
+
+OfflinePluginRuntime.install();

@@ -42,4 +42,13 @@ $ npm run serve
 
 - [jQuery](https://jquery.com/)
 
+- [jQuery UI](https://jqueryui.com/)
+
 - [Less](http://lesscss.org/)
+
+- [Bootstrap](https://getbootstrap.com/)
+
+- [PostCSS](https://postcss.org/)
+
+- [ESLint](https://eslint.org/)
+ 

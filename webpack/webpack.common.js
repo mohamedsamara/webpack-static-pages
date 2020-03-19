@@ -15,7 +15,7 @@ const config = {
     rules: [
       {
         enforce: 'pre',
-        test: /\.(js)$/,
+        test: /\.js$/,
         loader: 'eslint-loader',
         exclude: /node_modules/,
         options: {
@@ -23,7 +23,7 @@ const config = {
         },
       },
       {
-        test: /\.(js)$/,
+        test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
       },
@@ -49,9 +49,11 @@ helpers.getPageNames().forEach(page => {
     new HtmlWebPackPlugin({
       filename: `${page}.html`,
       template: `./src/pages/${page}/index.html`,
-      chunks: [page, 'main'],
+      chunks:
+        process.env.NODE_ENV === 'production'
+          ? [page, 'main', 'vendor', 'runtime']
+          : [page, 'main'],
       inject: true,
-      // favicon: path.resolve(__dirname, '../', 'src/public/favicon.ico'),
       minify:
         process.env.NODE_ENV === 'production'
           ? {
