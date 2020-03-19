@@ -6,7 +6,7 @@ This is a basic webpack static pages starter with jQuery UI, Bootstrap and Less.
 
 ## Demo
 
-This application is deployed on Heroku. Please check it out :smile: [here](https://webpack-static-pages.firebaseapp.com/).
+This application is deployed on Firebase. Please check it out :smile: [here](https://webpack-static-pages.firebaseapp.com/).
 
 
 ## Install
