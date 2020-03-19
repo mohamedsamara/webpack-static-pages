@@ -6,6 +6,7 @@ const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const helpers = require('./helpers');
 
@@ -35,6 +36,12 @@ const config = {
     },
   },
   plugins: [
+    new CopyWebpackPlugin([
+      {
+        from: 'src/public/robots.txt',
+        to: path.resolve(__dirname, '../', 'build'),
+      },
+    ]),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',

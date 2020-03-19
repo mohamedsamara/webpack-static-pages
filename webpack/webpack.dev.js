@@ -85,7 +85,6 @@ const config = {
     inline: true,
     compress: true,
     hot: true,
-    writeToDisk: true,
   },
 };
 
