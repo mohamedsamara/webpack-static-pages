@@ -41,6 +41,10 @@ const config = {
         from: 'src/public/robots.txt',
         to: path.resolve(__dirname, '../', 'build'),
       },
+      {
+        from: 'src/public/404.html',
+        to: path.resolve(__dirname, '../', 'build'),
+      },
     ]),
     new webpack.ProvidePlugin({
       $: 'jquery',
