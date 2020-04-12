@@ -13,8 +13,8 @@ const common = require('./webpack.common');
 const config = {
   mode: 'production',
   output: {
-    filename: 'js/[name].[contenthash].js',
     path: path.resolve(__dirname, '../', 'build'),
+    filename: 'js/[name].[contenthash].js',
   },
   devtool: 'source-map',
   module: {
@@ -122,6 +122,9 @@ const config = {
     },
     minimizer: [
       new TerserPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true,
         terserOptions: {
           warnings: false,
           compress: {
@@ -134,9 +137,6 @@ const config = {
             ascii_only: true,
           },
         },
-        cache: true,
-        parallel: true,
-        sourceMap: true,
       }),
     ],
   },

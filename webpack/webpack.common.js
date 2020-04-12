@@ -25,8 +25,8 @@ const config = {
       },
       {
         test: /\.js$/,
-        exclude: /node_modules/,
         loader: 'babel-loader',
+        exclude: /node_modules/,
       },
     ],
   },
@@ -55,7 +55,7 @@ const config = {
   ],
 };
 
-helpers.getPageNames().forEach(page => {
+helpers.getPages().forEach(page => {
   config.plugins.push(
     new HtmlWebPackPlugin({
       filename: `${page}.html`,
@@ -86,7 +86,7 @@ helpers.getPageNames().forEach(page => {
 
 config.plugins.push(
   new FaviconsWebpackPlugin({
-    logo: './src/public/favicon.svg',
+    logo: path.resolve(__dirname, '../', 'src/public/favicon.svg'),
     mode: 'webapp',
     devMode: 'webapp',
     favicons: {

@@ -3,7 +3,7 @@
 
 const glob = require('glob');
 
-function getPageNames() {
+function getPages() {
   const newPages = [];
   const pages = glob.sync('./src/pages/*');
   pages.forEach(page => {
@@ -21,11 +21,11 @@ function getEntry() {
   const entry = {
     main: './src/js/index.js',
   };
-  const pages = getPageNames();
+  const pages = getPages();
   pages.forEach(page => {
     entry[page] = `./src/pages/${page}/index.js`;
   });
   return entry;
 }
 
-module.exports = { getPageNames, getEntry };
+module.exports = { getPages, getEntry };

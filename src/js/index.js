@@ -13,4 +13,6 @@ $(document).ready(function() {
   navigation();
 });
 
-OfflinePluginRuntime.install();
+if (process.env.NODE_ENV === 'production') {
+  OfflinePluginRuntime.install();
+}

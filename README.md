@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a basic webpack static pages starter with jQuery UI, Bootstrap and Less.
+This is a basic webpack static pages starter with jQuery UI, Bootstrap and Less
 
 ## Demo
 
