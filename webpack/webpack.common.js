@@ -86,7 +86,7 @@ helpers.getPages().forEach(page => {
 
 config.plugins.push(
   new FaviconsWebpackPlugin({
-    logo: path.resolve(__dirname, '../', 'src/public/favicon.svg'),
+    logo: path.resolve(__dirname, '../', 'src/public/favicon.png'),
     mode: 'webapp',
     devMode: 'webapp',
     favicons: {
