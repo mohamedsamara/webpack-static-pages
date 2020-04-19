@@ -22,10 +22,10 @@
     "jquery",
     "jquery-ui",
     "bootstrap",
-    "less"
+    "less" 
   ],
   "author": "Mohamed Samara (https://github.com/mohamedsamara)",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/mohamedsamara/webpack-static-pages/issues"
   },
