@@ -17,18 +17,15 @@ Some basic Git commands are:
 $ git clone https://github.com/mohamedsamara/webpack-static-pages.git
 $ cd project
 $ npm install
-
 ```
 
 ## Firebase Hosting
 
 ```
-
 $ npm run deploy
 
 > Make sure Firebase CLI is installed, and project is initialized
 > firebase.json and .firebaserc will be generated
-
 ```
 
 
@@ -36,21 +33,18 @@ $ npm run deploy
 
 ```
 $ npm start
-
 ```
 
 ## Simple build for production
 
 ```
 $ npm run build
-
 ```
 
 ## Run the application for production
 
 ```
 $ npm run serve
-
 ```
 
 ## Languages & tools
